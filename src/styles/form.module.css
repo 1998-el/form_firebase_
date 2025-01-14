@@ -1,4 +1,4 @@
-/* form.module.css */
+
 .form {
     display: flex;
 
@@ -22,8 +22,8 @@
   }
   
  input:focus {
-    border-color: #007bff; /* Couleur de bordure au focus */
-    outline: none; /* Supprime le contour par défaut */
+    border-color: #007bff;
+    outline: none;
   }
   
   .submitButton {
@@ -42,7 +42,7 @@
     transition: background-color 0.3s;
   }
   .submitButton:disabled {
-    background-color: #ccc; /* Couleur lorsque le bouton est désactivé */
+    background-color: #ccc;
     cursor: not-allowed;
 }
 .submitButton  .spinner {
@@ -53,8 +53,7 @@
     height: 20px;
     animation: spin 1s linear infinite;
     position: absolute;
-    /* left: 50%;
-    transform: translateX(-50%); */
+
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -62,5 +61,5 @@
 }
 
   .submitButton:hover {
-    background-color: #0056b3; /* Couleur au survol */
+    background-color: #0056b3; 
   }

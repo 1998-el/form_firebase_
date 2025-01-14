@@ -1,20 +1,20 @@
-// lib/firestoreService.js
+
 import { db } from './firebaseConfig.js';
 import { collection, addDoc, deleteDoc, doc, updateDoc, serverTimestamp } from 'firebase/firestore';
 
-// Ajouter un utilisateur
+
 
 export const addUser = async (userData) => {
   try {
     const newUser = {
       ...userData,
-      createdAt: serverTimestamp(), // Ajoute un timestamp du serveur
+      createdAt: serverTimestamp(), 
     };
     const docRef = await addDoc(collection(db, 'users'), newUser);
     console.log("Utilisateur ajouté avec succès, ID: ", docRef.id);
     return docRef.id;
   } catch (error) {
-    // Gestion des erreurs améliorée
+
     console.error("Erreur lors de l'ajout de l'utilisateur: ", error.message);
     if (error.code) {
       switch (error.code) {
@@ -28,10 +28,10 @@ export const addUser = async (userData) => {
           console.error("Une erreur inconnue s'est produite.");
       }
     }
-    return null; // Retourne null en cas d'erreur
+    return null; 
   }
 };
-// Supprimer un utilisateur
+
 export const deleteUser = async (id) => {
   try {
     await deleteDoc(doc(db, 'users', id));
@@ -40,13 +40,12 @@ export const deleteUser = async (id) => {
   }
 };
 
-// Mettre à jour un utilisateur
 export const updateUser = async (id, userData) => {
   try {
     const userRef = doc(db, 'users', id);
     const updatedData = {
       ...userData,
-      updatedAt: serverTimestamp(), // Optionnel : ajoute un timestamp de mise à jour
+      updatedAt: serverTimestamp(), 
     };
     await updateDoc(userRef, updatedData);
   } catch (error) {

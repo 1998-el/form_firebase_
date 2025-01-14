@@ -1,12 +1,12 @@
-"use client"; // Ajoutez cette ligne
+"use client";
 
 import { useEffect, useState } from 'react';
-import { db } from '../lib/firebaseConfig'; // Importez la configuration de Firestore
+import { db } from '../lib/firebaseConfig'; 
 import UserForm from '../components/UserForm';
 import UserList from '../components/UserList';
 import { addUser, deleteUser, updateUser } from '../lib/firestoreService';
-import { collection, getDocs } from 'firebase/firestore'; // Importez getDocs pour récupérer les utilisateurs
-import styles from '../styles/Home.module.css'; // Importez le module CSS
+import { collection, getDocs } from 'firebase/firestore'; 
+import styles from '../styles/Home.module.css'; 
 import img from '../assets/employees-885338_1280.jpg'
 
 const Home = () => {
@@ -14,13 +14,13 @@ const Home = () => {
   const [editingUser, setEditingUser] = useState(null);
 
   useEffect(() => {
-    // Charger les utilisateurs depuis Firestore
+  
     const fetchUsers = async () => {
       try {
-        const usersCollection = collection(db, 'users'); // Référence à la collection 'users'
-        const userSnapshot = await getDocs(usersCollection); // Récupérer les documents
-        const userList = userSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })); // Formater les données
-        setUsers(userList); // Mettre à jour l'état avec la liste des utilisateurs
+        const usersCollection = collection(db, 'users'); 
+        const userSnapshot = await getDocs(usersCollection); 
+        const userList = userSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setUsers(userList); 
       } catch (error) {
         console.error("Erreur lors de la récupération des utilisateurs: ", error);
       }
@@ -64,11 +64,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{/* <h1 className={styles.title}>Gestion des utilisateurs</h1>
-<div className={styles.userForm}>
-  <UserForm onSubmit={editingUser ? handleUpdateUser : handleAddUser} initialData={editingUser} />
-</div>
-<div className={styles.userList}>
-  <UserList users={users} onDelete={handleDeleteUser} onEdit={handleEditUser} />
-</div> */}

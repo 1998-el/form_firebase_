@@ -7,7 +7,7 @@ const UserForm = ({ onSubmit, initialData }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [buttonText, setButtonText] = useState("Enregistrer");
 
-    // Utiliser useEffect pour charger les données initiales lorsque initialData change
+
     useEffect(() => {
         if (initialData) {
             setName(initialData.name);
@@ -25,17 +25,15 @@ const UserForm = ({ onSubmit, initialData }) => {
         setIsLoading(true);
         setButtonText("Enregistrement...");
 
-        // Simuler un délai pour l'enregistrement
         await onSubmit({ name, email });
 
-        // Après l'enregistrement, mettre à jour le texte du bouton
         setButtonText("Saved");
         setTimeout(() => {
             setButtonText("Enregistrer");
             setIsLoading(false);
             setEmail('');
             setName('');
-        }, 2000); // Remettre le texte après 2 secondes
+        }, 2000);
     };
 
     return (

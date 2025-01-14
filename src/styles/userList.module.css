@@ -1,4 +1,4 @@
-/* userList.module.css */
+
 .container{
     max-height: 500px;
     height: 400px;
@@ -16,52 +16,52 @@
 
 .userTable th,
 .userTable td {
-    padding: 10px 10px; /* Augmenter le padding pour plus d'espace */
+    padding: 10px 10px;
     text-align: left;
     border-bottom: 1px solid #c6c4c4;
 }
 
 .userTable th {
-    background-color: transparent; /* Couleur de fond pour l'en-tête */
+    background-color: transparent; 
     color: rgb(108, 107, 107);
     font-weight: bold;
 }
 
 .userTable tr {
-    transition: background-color 0.3s ease; /* Animation fluide pour le survol */
+    transition: background-color 0.3s ease;
     background-color: #ffffff;
 }
 
 .userTable tr:hover {
-    background-color: #f1f1f1; /* Couleur de survol pour les lignes */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère au survol */
+    background-color: #f1f1f1; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .editButton,
 .deleteButton {
-    padding: 8px 10px; /* Ajuster le padding pour les boutons */
+    padding: 8px 10px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 14px; /* Augmenter la taille de la police */
+    font-size: 14px;
     margin-right: 5px;
-    transition: background-color 0.3s ease; /* Animation fluide pour les boutons */
+    transition: background-color 0.3s ease;
 }
 
 .editButton {
-    background-color: #08041d; /* Couleur pour modifier */
+    background-color: #08041d; 
     color: white;
 }
 
 .editButton:hover {
-    background-color: #218838; /* Couleur au survol */
+    background-color: #218838; 
 }
 
 .deleteButton {
-    background-color: #dc3545; /* Couleur pour supprimer */
+    background-color: #dc3545;
     color: white;
 }
 
 .deleteButton:hover {
-    background-color: #c82333; /* Couleur au survol */
+    background-color: #c82333; 
 }
